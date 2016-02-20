@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Fha-PJ-Q77">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1if-Ym-fmx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bYx-h9-OUV">
+            <objects>
+                <navigationController id="1if-Ym-fmx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KFe-CA-Nc7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Fha-PJ-Q77" kind="relationship" relationship="rootViewController" id="Qam-G7-eWH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q0L-g2-KGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-343" y="336"/>
+        </scene>
         <!--Friend List View Controller-->
         <scene sceneID="yEZ-vJ-kIW">
             <objects>
@@ -29,13 +46,60 @@
                             <constraint firstItem="P2c-Pc-bOK" firstAttribute="top" secondItem="gAA-Md-XcR" secondAttribute="top" id="ypO-0d-EP7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xYP-rb-oMX"/>
                     <connections>
                         <outlet property="tableView" destination="P2c-Pc-bOK" id="QJ8-MD-B87"/>
+                        <segue destination="z3k-v0-vFR" kind="show" identifier="friendListToFriendDetailSeque" id="w0h-gH-AX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fz3-pA-shG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="369" y="336"/>
+        </scene>
+        <!--Friend Detail View Controller-->
+        <scene sceneID="Xj7-wT-d71">
+            <objects>
+                <viewController id="z3k-v0-vFR" customClass="FriendDetailViewController" customModule="Friendbook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X7A-YF-D67"/>
+                        <viewControllerLayoutGuide type="bottom" id="ANB-Nu-Gbr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4WH-4K-JYH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tP-Sf-ju8">
+                                <rect key="frame" x="241" y="182" width="118" height="73"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="47"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-gO-leZ">
+                                <rect key="frame" x="30" y="89" width="540" height="39"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wnH-gO-leZ" firstAttribute="leading" secondItem="4WH-4K-JYH" secondAttribute="leadingMargin" constant="10" id="RhP-tN-tiR"/>
+                            <constraint firstItem="wnH-gO-leZ" firstAttribute="centerX" secondItem="4WH-4K-JYH" secondAttribute="centerX" id="VxY-81-giH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wnH-gO-leZ" secondAttribute="trailing" constant="10" id="dX6-mh-QfK"/>
+                            <constraint firstItem="6tP-Sf-ju8" firstAttribute="top" secondItem="wnH-gO-leZ" secondAttribute="bottom" constant="54" id="pcQ-b7-Fav"/>
+                            <constraint firstItem="6tP-Sf-ju8" firstAttribute="centerX" secondItem="4WH-4K-JYH" secondAttribute="centerX" id="t8T-T2-YfK"/>
+                            <constraint firstItem="wnH-gO-leZ" firstAttribute="top" secondItem="X7A-YF-D67" secondAttribute="bottom" constant="25" id="wP9-CP-jDI"/>
+                            <constraint firstItem="6tP-Sf-ju8" firstAttribute="centerX" secondItem="4WH-4K-JYH" secondAttribute="centerX" id="yfH-cJ-izg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayLabel" destination="6tP-Sf-ju8" id="rqx-gM-2c0"/>
+                        <outlet property="nameLabel" destination="wnH-gO-leZ" id="AEr-jK-27Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xkA-EM-wBv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082" y="336"/>
         </scene>
     </scenes>
 </document>

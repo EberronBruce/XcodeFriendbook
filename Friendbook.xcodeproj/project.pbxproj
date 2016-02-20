@@ -12,6 +12,7 @@
 		7A75CC0E1C7829D6001008C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A75CC0D1C7829D6001008C6 /* Assets.xcassets */; };
 		7A75CC111C7829D6001008C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A75CC0F1C7829D6001008C6 /* LaunchScreen.storyboard */; };
 		7A75CC191C783065001008C6 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75CC181C783065001008C6 /* FriendListViewController.swift */; };
+		7A75CC1B1C788DA1001008C6 /* FriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A75CC1A1C788DA1001008C6 /* FriendDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7A75CC101C7829D6001008C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A75CC121C7829D6001008C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A75CC181C783065001008C6 /* FriendListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		7A75CC1A1C788DA1001008C6 /* FriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				7A75CC061C7829D6001008C6 /* AppDelegate.swift */,
 				7A75CC181C783065001008C6 /* FriendListViewController.swift */,
+				7A75CC1A1C788DA1001008C6 /* FriendDetailViewController.swift */,
 				7A75CC0A1C7829D6001008C6 /* Main.storyboard */,
 				7A75CC0D1C7829D6001008C6 /* Assets.xcassets */,
 				7A75CC0F1C7829D6001008C6 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				7A75CC191C783065001008C6 /* FriendListViewController.swift in Sources */,
 				7A75CC071C7829D6001008C6 /* AppDelegate.swift in Sources */,
+				7A75CC1B1C788DA1001008C6 /* FriendDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

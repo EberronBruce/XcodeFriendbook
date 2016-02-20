@@ -9,8 +9,12 @@
 import UIKit
 
 class FriendListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    //Variable to connect the table view to the storyboard
     @IBOutlet weak var tableView: UITableView!
+    //Set a constant for a list of friends
+    let myFriends = ["Bob","George","Tom","Jack","Harry"]
+    
+    var selectedFriend = "Joe"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,17 +30,35 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.delegate = self
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
     
+    /*
+    This is the function that adds the number of rows in the table view
+    */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.myFriends.count
+    }
+    /*
+    This is the function that adds cells to the table view and adds content to the cells
+    */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
         
-        cell.textLabel!.text = "Qhat"
+        cell.textLabel!.text = myFriends[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.selectedFriend = myFriends[indexPath.row]
+        
+        self.performSegueWithIdentifier("friendListToFriendDetailSeque", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailViewController = segue.destinationViewController as! FriendDetailViewController
+        detailViewController.name = self.selectedFriend
     }
 
 }
