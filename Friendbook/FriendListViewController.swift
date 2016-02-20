@@ -12,7 +12,7 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     //Variable to connect the table view to the storyboard
     @IBOutlet weak var tableView: UITableView!
     //Set a constant for a list of friends
-    let myFriends = ["Bob","George","Tom","Jack","Harry"]
+    let myFriends = ["Yen1","Yen2","Tom","Jack","Harry"]
     
     var selectedFriend = "Joe"
     
@@ -59,6 +59,30 @@ class FriendListViewController: UIViewController, UITableViewDataSource, UITable
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let detailViewController = segue.destinationViewController as! FriendDetailViewController
         detailViewController.name = self.selectedFriend
+        
+        /* 
+        Adding switch statement to set birthdays
+        */
+        switch self.selectedFriend {
+        case "Yen1":
+            detailViewController.birthday = "March 10"
+            break
+        case "Yen2":
+            detailViewController.birthday = "Janurary 18"
+            break
+        case "Tom":
+            detailViewController.birthday = "October 19"
+            break
+        case "Jack":
+            detailViewController.birthday = "Apirl 27"
+            break
+        case "Harry" :
+            detailViewController.birthday = "September 11"
+            break
+        default :
+            detailViewController.birthday = "No birthday"
+        }
+        
     }
 
 }
